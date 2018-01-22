@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "node server.js"
-      },
+    },
     "keywords": [],
     "author": "Justin Rice <jsrice7391@gmail.com>",
     "license": "ISC",
