@@ -8,7 +8,7 @@ const session = require('express-session');
 const passport = require("passport");
 const flash = require('connect-flash');
 
-var PORT = process.env.PORT || 3000;
+var ORT = process.env.PORT || 3000;
 
 
 // Allow boy barser to parse the data
@@ -41,9 +41,8 @@ require("./routes/htmlroutes")(app, passport);
 // Start the app
 
 db.sequelize.sync({}).then(function() {
-    app.listen(PORT, function() {
-        console.log("APP is listening on Port: " + PORT);
     });
 
-
+    app.listen(PORT, function() {
+        console.log("APP is listening on Port: " + PORT);
 })
