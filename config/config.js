@@ -6,21 +6,18 @@ module.exports = {
         username: process.env.DBUSER,
         password: process.env.DBPASS,
         database: process.env.DB,
-        host: "mna97msstjnkkp7h.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        host: "127.0.0.1",
         dialect: "mysql"
     },
     test: {
         username: process.env.DBUSER,
         password: process.env.DBPASS,
         database: process.env.DB,
-        host: "mna97msstjnkkp7h.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        host: "127.0.0.1",
         dialect: "mysql"
     },
     production: {
-        username: process.env.DBUSER,
-        password: process.env.DBPASS,
-        database: process.env.DB,
-        host: "mna97msstjnkkp7h.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-        dialect: "mysql"
+    user_env_variable: process.env.JAWSDB_URL
+  
     }
-}
+ }
