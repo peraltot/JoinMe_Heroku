@@ -8,10 +8,7 @@ const session = require('express-session');
 const passport = require("passport");
 const flash = require('connect-flash');
 
-var PORT = process.env.PORT || 8000;
-
-
-
+var PORT = process.env.PORT || 3000;
 
 // Allow boy barser to parse the data
 app.use(bodyParser.urlencoded({ extended: false }));
