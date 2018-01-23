@@ -10,8 +10,10 @@
     "author": "Justin Rice <jsrice7391@gmail.com>",
     "license": "ISC",
     "dependencies": {
+        "bcrypt-nodejs": "0.0.3",
         "body-parser": "^1.18.2",
         "connect-flash": "^0.1.1",
+        "dotenv": "^4.0.0",
         "ejs": "^2.5.7",
         "express": "^4.16.2",
         "express-handlebars": "^3.0.0",
@@ -24,7 +26,6 @@
         "passport-facebook": "^2.1.1",
         "passport-local": "^1.0.0",
         "path": "^0.12.7",
-        "dotenv": "^4.0.0",
         "sequelize": "^4.31.1"
     },
     "devDependencies": {

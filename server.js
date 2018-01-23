@@ -8,7 +8,9 @@ const session = require('express-session');
 const passport = require("passport");
 const flash = require('connect-flash');
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8000;
+
+
 
 
 // Allow boy barser to parse the data
@@ -21,7 +23,7 @@ app.use(express.static("public"));
 
 
 // required for passport
-require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport/passport')(passport); // pass passport for configuration
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -37,13 +39,18 @@ app.set("view engine", "handlebars");
 require("./routes/projects_api_routes")(app, passport);
 require("./routes/user_routes")(app, passport);
 require("./routes/htmlroutes")(app, passport);
+require('./routes/authRoutes.js')(app, passport);
 
-// Start the app
-app.listen(PORT, function() {
-    console.log("APP is listening on Port: " + PORT);
-    
-db.sequelize.sync({}).then(function() {
+// // Start the app
+// app.listen(PORT, function() {
+//     console.log("APP is listening on Port: " + PORT);
+// db.sequelize.sync({}).then(function() {
+//     });
+
+    // Start the app
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+        console.log("APP is listening on Port: " + PORT);
     });
-
 
 })
