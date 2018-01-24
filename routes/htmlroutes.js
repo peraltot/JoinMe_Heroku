@@ -15,7 +15,7 @@ var path = require("path");
 module.exports = function(app, passport) {
 
 
-    // Get the Index page
+    // Get the Home page
     app.get("/", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/index.html"));
     });
@@ -31,34 +31,34 @@ module.exports = function(app, passport) {
     });
 
     app.post("/signup", passport.authenticate("local-signup", {
-        successRedirect: '/profile', // redirect to the secure profile section
+        successRedirect: '/user', // redirect to the secure profile section
         failureRedirect: '/signup', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
     }));
 
     app.post("/login", passport.authenticate("local-signup", {
-        successRedirect: '/profile', // redirect to the secure profile section
+        successRedirect: '/user', // redirect to the secure profile section
         failureRedirect: '/login', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
     }));
 
+    // Get the User page
+    app.get("/user", function(req, res) {
+        res.render("index");
+    });
 
+    //  Get the search page for all projects
 
-
-
-
-
-    //  search page for all projects
     app.get("/searchProject", function(req, res) {
         res.render("searchProject");
     });
 
-    // load the project page for a user's individual projects
+    // Get the project page for a user's individual projects
     app.get("/project", function(req, res) {
         res.render("project");
     });
 
-    // loads the about this app page
+    // Get the about this app page
     app.get("/about", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/about.html"));
     })
