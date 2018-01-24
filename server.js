@@ -49,5 +49,5 @@ require('./routes/authRoutes.js')(app, passport);
     app.listen(PORT, function() {
         console.log("APP is listening on Port: " + PORT);
     });
-    db.sequelize.sync({ force: true }).then(function() {
+    db.sequelize.sync({ force: false }).then(function() {
 })
