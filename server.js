@@ -46,7 +46,9 @@ require('./routes/steps_routes.js')(app, passport);
 //{force:true} will drop table
 
 db.sequelize.sync({}).then(function() {
-    app.listen(PORT, function() {
-        console.log("APP is listening on Port: " + PORT);
-    });
+    
+});
+
+app.listen(PORT, function() {
+    console.log("APP is listening on Port: " + PORT);
 });
